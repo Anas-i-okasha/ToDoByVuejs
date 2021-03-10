@@ -1,13 +1,16 @@
 <template>
-    <div>
-        <input placeholder="Enter your task here..." v-model="title">
-        <button :disabled="!title" @click="addtask()" > Add Task </button>
-        <button v-if="tasks.length>2" @click="deleteAll()">Delete All</button>
-        <ul v-bind:key="task.id" v-for="(task , index) in tasks">
+    <div style="margin-top:50px;" class="container">
+        <div class="text-center">
+            <input class="form-control" placeholder="Enter your task here..." v-model="title">
+        <button class="btn btn-dark btn-block" :disabled="!title" @click="addtask()" > Add Task </button>
+        <button class="btn btn-danger btn-block" v-if="tasks.length>2" @click="deleteAll()">Delete All</button>
+        <ul style=" list-style:none;  margin-top:30px;" v-bind:key="task.id" v-for="(task , index) in tasks">
             <li>
-          <input type="checkbox">   {{task}}  <button @click="deletetask(index)"> Delete the Task </button>
+            {{task}}    <div style="margin-top:10px;"><button class="btn btn-danger" @click="deletetask(index)"> Delete the Task </button></div>  
             </li>
         </ul>
+        </div>
+        
     </div>
 </template>
 
@@ -17,7 +20,8 @@ export default {
     props:['tasks'],
  data(){
      return {
-         title:""
+         title:"",
+         check:false
      }
  },
  methods:{

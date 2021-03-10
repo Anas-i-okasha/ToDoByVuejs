@@ -1,6 +1,6 @@
 <template>
-  <div >
-    <h2> Todo list</h2>
+  <div style="margin-top:50px;" class="container">
+    <h2 class="text-center"> Todo list</h2>
     <div>
       <Addnew v-bind:tasks="tasks"/>
     </div>
@@ -12,7 +12,7 @@ import Addnew from './Addnew'
 export default {
   name: 'HelloWorld',
   components:{
-    Addnew
+    Addnew,
   },
   data(){
     return {
@@ -24,4 +24,3 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
